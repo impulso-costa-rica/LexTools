@@ -1,4 +1,4 @@
-console.log("prueba5");
+console.log("prueba6");
 var input1 = 0;
 var input2 = 0;
 var input3 = 0;
@@ -72,7 +72,8 @@ function ValorCAbogados (input,input2,cuantia){
     if(cuantia==4){return getCAValue(input)+getCAValue(input2)};
 };
 function ValorRPapel (input,pliegos,cuantia){
-    function getRPapelValue (inputValue){     
+    function getRPapelValue (inputValue){  
+        if(inputValue==0){return 125};   
         if(inputValue<=25000){return 12.5};
         if(inputValue>25000){return 25};
         if(inputValue>75000){return 31.25};
@@ -81,7 +82,6 @@ function ValorRPapel (input,pliegos,cuantia){
         if(inputValue>500000){return 156.25};
         if(inputValue>1000000){return 312.5};
         if(inputValue>1500000){return 625};
-        if(inputValue==0){return 125};
     };
     if (pliegos==0){pliegos=1};
     let valuePliegos = (pliegos-1)*12.5;
