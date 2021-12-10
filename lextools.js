@@ -81,6 +81,7 @@ function ValorRPapel (input,pliegos,cuantia){
         if(inputValue>1000000){return 312.5};
         if(inputValue>1500000){return 625};
         if(inputValue==0){return 125};
+        console.log(inputValue);
     };
     if (pliegos==0){pliegos=1};
     let valuePliegos = (pliegos-1)*12.5;
