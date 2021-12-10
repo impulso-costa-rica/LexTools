@@ -86,7 +86,7 @@ function ValorRPapel (input,pliegos,cuantia){
     };
     if (pliegos==0){pliegos=1};
     let valuePliegos = (pliegos-1)*12.5;
-    console.log(getRPapelValue(input)+valuePliegos);
+    console.log(getRPapelValue(input));
     if(cuantia==0){return 0};
     if(cuantia==1){return getRPapelValue(input)+valuePliegos};
     if(cuantia==2){return 125};
