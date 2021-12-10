@@ -1,4 +1,4 @@
-console.log("prueba");
+console.log("prueba2");
 var input1 = 0;
 var input2 = 0;
 var input3 = 0;
@@ -82,10 +82,10 @@ function ValorRPapel (input,pliegos,cuantia){
         if(inputValue>1000000){return 312.5};
         if(inputValue>1500000){return 625};
         if(inputValue==0){return 125};
-        console.log(inputValue);
     };
     if (pliegos==0){pliegos=1};
     let valuePliegos = (pliegos-1)*12.5;
+    console.log(getRPapelValue(input)+valuePliegos);
     if(cuantia==0){return 0};
     if(cuantia==1){return getRPapelValue(input)+valuePliegos};
     if(cuantia==2){return 125};
