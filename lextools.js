@@ -180,6 +180,7 @@ function ValorHonorarios (input1, input2, input3, cuantia, porcentaje) {
         if (total<60500){total=60500};
         return total;
     };
+    if (cuantia==0){return 0};
     if (cuantia==1){return calculo1(input1)*porcentaje/100};
     if (cuantia==2){return calculo2(input1)*porcentaje/100};
     if (cuantia==3){return 60500*porcentaje/100};
