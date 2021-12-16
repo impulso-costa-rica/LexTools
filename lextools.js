@@ -56,14 +56,16 @@ function ValorANacional (input, cuantia){
 };
 function ValorCAbogados (input,input2,cuantia){
     function getCAValue (inputValue){
-        if(inputValue<=250000){return 0};
-        if(inputValue>250000){return 1100};
-        if(inputValue>1000000){return 2200};
-        if(inputValue>5000000){return 5500};
-        if(inputValue>25000000){return 11000};
-        if(inputValue>50000000){return 16500};
-        if(inputValue>100000000){return 27500};
-        if(inputValue>500000000){return 55000}; 
+        let result = 0;
+        if(inputValue<=250000){result = 0};
+        if(inputValue>250000){result = 1100};
+        if(inputValue>1000000){result = 2200};
+        if(inputValue>5000000){result = 5500};
+        if(inputValue>25000000){result = 11000};
+        if(inputValue>50000000){result = 16500};
+        if(inputValue>100000000){result = 27500};
+        if(inputValue>500000000){result = 55000}; 
+        return result;
     };
     if(cuantia==0){return 0};
     if(cuantia==1){return getCAValue(input)};
@@ -72,16 +74,18 @@ function ValorCAbogados (input,input2,cuantia){
     if(cuantia==4){return getCAValue(input)+getCAValue(input2)};
 };
 function ValorRPapel (input,pliegos,cuantia){
-    function getRPapelValue (inputValue){  
-        if(inputValue==0){return 125};   
-        if(inputValue<=25000){return 12.5};
-        if(inputValue>25000){return 25};
-        if(inputValue>75000){return 31.25};
-        if(inputValue>100000){return 62.5};
-        if(inputValue>250000){return 125};
-        if(inputValue>500000){return 156.25};
-        if(inputValue>1000000){return 312.5};
-        if(inputValue>1500000){return 625};
+    function getRPapelValue (inputValue){ 
+        let result = 0;   
+        if(inputValue<=25000){result = 12.5};
+        if(inputValue>25000){result = 25};
+        if(inputValue>75000){result = 31.25};
+        if(inputValue>100000){result = 62.5};
+        if(inputValue>250000){result = 125};
+        if(inputValue>500000){result = 156.25};
+        if(inputValue>1000000){result = 312.5};
+        if(inputValue>1500000){result = 625};
+        if(inputValue==0){result = 125}; 
+        return result;
     };
     if (pliegos==0){pliegos=1};
     let valuePliegos = (pliegos-1)*12.5;
