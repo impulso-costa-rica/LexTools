@@ -1,4 +1,4 @@
-console.log("prueba6");
+console.log("prueba7");
 var input1 = 0;
 var input2 = 0;
 var input3 = 0;
@@ -85,12 +85,6 @@ function ValorRPapel (input,pliegos,cuantia){
     };
     if (pliegos==0){pliegos=1};
     let valuePliegos = (pliegos-1)*12.5;
-
-    console.log("Pliegos:");
-    console.log(valuePliegos);
-    console.log("Funcion papel:");
-    console.log(getRPapelValue(input));
-
     if(cuantia==0){return 0};
     if(cuantia==1){return getRPapelValue(input)+valuePliegos};
     if(cuantia==2){return 125};
@@ -121,10 +115,11 @@ function ValorAgrario (input,cuantia){
     if (cuantia==5){return 10000};
     if (cuantia==6){return 11175};
     if (cuantia==7){
-        if (input-5000000<=0){return 2235}
-        else{return 2235 + value*1.4};
+        let exceso= input-5000000;
+        if (exceso<=0){return 2235}
+        else{return 2235 + (Math.ceil(exceso/1000))*1.4};
     };
-    if (cuantia==8){return value*3*2};
+    if (cuantia==8){return value*2};
 };
 function ValorEducacion (input, cuantia){
     let value = 0; 
