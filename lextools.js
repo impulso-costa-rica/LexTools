@@ -1,4 +1,4 @@
-console.log("prueba7");
+console.log("Ajuste cuantía 9");
 var input1 = 0;
 var input2 = 0;
 var input3 = 0;
@@ -198,7 +198,7 @@ function ValorHonorarios (input1, input2, input3, cuantia, porcentaje) {
     if (cuantia==7){return calculo1(input1)+90750};
     if (cuantia==8){return calculo1(input1)+calculo1(input2)*25/100};
     if (cuantia==9){
-        let value1 = calculo1(input1*150/100);
+        let value1 = calculo1(input1)*150/100;
         let value2 = (input1+input3)*90750+121000;
         if (value1>value2){return value1}
         else if (value1<value2){return value2};
