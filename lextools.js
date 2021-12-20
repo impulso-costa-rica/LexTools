@@ -116,7 +116,7 @@ function ValorAgrario (input,cuantia){
         if (exceso<=0){return 2235}
         else{return 2235 + (Math.ceil(exceso/1000))*1.4};
     };
-    if (cuantia==8){return value*2};
+    if (cuantia==8){return (value*3)*2};
 };
 function ValorEducacion (input, cuantia){
     let value = 0; 
