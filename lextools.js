@@ -1,4 +1,4 @@
-console.log("Ajuste cuantía Honorarios 9");
+console.log("Ajuste RNacional cuantias 1,2,5y7");
 var input1 = 0;
 var input2 = 0;
 var input3 = 0;
@@ -24,26 +24,19 @@ var descuentoTimbres =0;
 var iva =0;
 var total =0;
 function ValorRNacional (input,cuantia){
+    function getRNvalue (inputValue, colones){
+        let result = (Math.ceil(inputValue/1000))*colones;
+        if(result<2000){return 2000} 
+        else {return result;}
+    };
     if (cuantia==0){return 0};
-    if ( cuantia==1){
-        let value = (Math.ceil(input/1000))*1;
-        if(value<2000){return 2000} 
-        else {return value;}
-    };
-    if (cuantia==2){
-        let value = (Math.ceil(input/1000))*5;
-        if(value<2000){return 2000} 
-        else {return value;}
-    };
+    if (cuantia==1){return getRNvalue (input,1)};
+    if (cuantia==2){return getRNvalue (input,5)};
     if(cuantia==3){return 2000};
     if(cuantia==4){return 46220};
-    if(cuantia==5){return((Math.ceil(input/1000))*5)+2000};
+    if(cuantia==5){return(getRNvalue (input,2)+2000)};
     if(cuantia==6){return 300};
-    if(cuantia==7){
-        let value = (Math.ceil(input/1000))*5;
-        if(value<2000){return 2000+46220} 
-        else {return value+46220;}
-    };
+    if(cuantia==7){return(getRNvalue (input,5)+46220)};
 };
 function ValorANacional (input, cuantia){
     let value = 0;
