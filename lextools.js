@@ -199,7 +199,7 @@ function ValorHonorarios (input1, input2, input3, cuantia, porcentaje) {
     if (cuantia==8){return calculo1(input1)+calculo1(input2)*25/100};
     if (cuantia==9){
         let value1 = calculo1(input1)*150/100;
-        let value2 = (input1+input3)*90750+121000;
+        let value2 = (input2+input3)*90750+121000;
         if (value1>value2){return value1}
         else if (value1<value2){return value2};
     };
