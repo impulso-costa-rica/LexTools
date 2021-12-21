@@ -1,4 +1,4 @@
-console.log("Ajuste Timbre Agrario");
+console.log("Ajuste en honorarios mayor 60500");
 var input1 = 0;
 var input2 = 0;
 var input3 = 0;
@@ -181,19 +181,22 @@ function ValorHonorarios (input1, input2, input3, cuantia, porcentaje) {
         if (total<60500){total=60500};
         return total;
     };
-    if (cuantia==0){return 0};
-    if (cuantia==1){return calculo1(input1)*porcentaje/100};
-    if (cuantia==2){return calculo2(input1)*porcentaje/100};
-    if (cuantia==3){return 60500*porcentaje/100};
-    if (cuantia==4){return 121000*porcentaje/100};
-    if (cuantia==5){return 383000*porcentaje/100};
-    if (cuantia==6){return 18150*porcentaje/100};
-    if (cuantia==7){return calculo1(input1)+90750};
-    if (cuantia==8){return calculo1(input1)+calculo1(input2)*25/100};
+    let result = 0;
+    if (cuantia==0){result = 0};
+    if (cuantia==1){result = calculo1(input1)*porcentaje/100};
+    if (cuantia==2){result = calculo2(input1)*porcentaje/100};
+    if (cuantia==3){result = 60500*porcentaje/100};
+    if (cuantia==4){result = 121000*porcentaje/100};
+    if (cuantia==5){result = 383000*porcentaje/100};
+    if (cuantia==6){result = 18150*porcentaje/100};
+    if (cuantia==7){result = calculo1(input1)+90750};
+    if (cuantia==8){result = calculo1(input1)+calculo1(input2)*25/100};
     if (cuantia==9){
         let value1 = calculo1(input1)*150/100;
         let value2 = (input2+input3)*90750+121000;
-        if (value1>value2){return value1}
-        else if (value1<value2){return value2};
+        if (value1>value2){result = value1}
+        else if (value1<value2){result = value2};
     };
+    if (result>60500){return 60500}
+    else {return result};
 };  
