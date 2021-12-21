@@ -197,6 +197,6 @@ function ValorHonorarios (input1, input2, input3, cuantia, porcentaje) {
         if (value1>value2){result = value1}
         else if (value1<value2){result = value2};
     };
-    if (result>60500){return 60500}
+    if (result<60500){return 60500}
     else {return result};
 };  
