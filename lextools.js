@@ -1,4 +1,4 @@
-console.log("Ajuste en honorarios mayor 60500");
+console.log("Ajuste en honorarios cuantia 9");
 var input1 = 0;
 var input2 = 0;
 var input3 = 0;
@@ -193,7 +193,7 @@ function ValorHonorarios (input1, input2, input3, cuantia, porcentaje) {
     if (cuantia==8){result = calculo1(input1)+calculo1(input2)*25/100};
     if (cuantia==9){
         let value1 = calculo1(input1)*150/100;
-        let value2 = (input2+input3)*90750+121000;
+        let value2 = (input2+input3)*60500;
         if (value1>value2){result = value1}
         else if (value1<value2){result = value2};
     };
