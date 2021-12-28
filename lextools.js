@@ -1,4 +1,4 @@
-console.log("Ajuste en honorarios cuantia 9");
+console.log("Ajuste en honorarios");
 var input1 = 0;
 var input2 = 0;
 var input3 = 0;
@@ -170,7 +170,6 @@ function ValorHonorarios (input1, input2, input3, cuantia, porcentaje) {
         if(input > 11000000 && input <= 16500000){total=220000+(input-11000000)*1.5/100}
         if(input >16500000 && input <= 33000000){total=220000+82500+(input-16500000)*1.25/100}
         if(input>33000000){total=220000+82500+206250+(input-33000000)*1/100};
-        if (total<60500){total=60500};
         return total;
     };
     function calculo2 (input){
@@ -178,25 +177,43 @@ function ValorHonorarios (input1, input2, input3, cuantia, porcentaje) {
         if (input <= 16500000){total = input*20/100};
         if (input > 16500000 && input <= 82500000){total=3300000+(input-16500000)*15/100}
         if (input>82500000){total=3300000+9900000+(input-82500000)*10/100};
-        if (total<60500){total=60500};
         return total;
     };
     let result = 0;
     if (cuantia==0){result = 0};
-    if (cuantia==1){result = calculo1(input1)*porcentaje/100};
-    if (cuantia==2){result = calculo2(input1)*porcentaje/100};
-    if (cuantia==3){result = 60500*porcentaje/100};
-    if (cuantia==4){result = 121000*porcentaje/100};
-    if (cuantia==5){result = 383000*porcentaje/100};
-    if (cuantia==6){result = 18150*porcentaje/100};
-    if (cuantia==7){result = calculo1(input1)+90750};
-    if (cuantia==8){result = calculo1(input1)+calculo1(input2)*25/100};
+    if (cuantia==1){
+        result = calculo1(input1)*porcentaje/100;
+        if (result<60500){result = 60500};  
+    };
+    if (cuantia==2){
+        result = calculo2(input1)*porcentaje/100;
+        if (result<60500){result = 60500};
+    };
+    if (cuantia==3){
+        result = 60500*porcentaje/100;
+    };
+    if (cuantia==4){
+        result = 121000*porcentaje/100;
+    };
+    if (cuantia==5){
+        result = 383000*porcentaje/100;
+    };
+    if (cuantia==6){
+        result = 18150*porcentaje/100;
+    };
+    if (cuantia==7){
+        result = calculo1(input1)+90750;
+    };
+    if (cuantia==8){
+        result = calculo1(input1)+calculo1(input2)*25/100;
+        if (result<60500){result = 60500};
+    };
     if (cuantia==9){
         let value1 = calculo1(input1)*150/100;
         let value2 = (input2+input3)*60500;
         if (value1>value2){result = value1}
         else if (value1<value2){result = value2};
+        if (result<60500){result = 60500};
     };
-    if (result<60500){return 60500}
-    else {return result};
+    return result;
 };  
