@@ -1,4 +1,4 @@
-console.log("Ajuste en honorarios");
+console.log("Ajuste en Fiscal");
 var input1 = 0;
 var input2 = 0;
 var input3 = 0;
@@ -87,7 +87,7 @@ function ValorRPapel (input,pliegos,cuantia){
     if(cuantia==2){return 125};
     if(cuantia==3){return 12,5};
 };
-function ValorFiscal (input,cuantia){
+function ValorFiscal (input,pliegos,cuantia){
     let value = 0; 
     if(input<=25000){value=12.5};
     if(input>25000){value=25};
@@ -102,6 +102,11 @@ function ValorFiscal (input,cuantia){
     if(cuantia==2){return value};
     if(cuantia==3){return 125};
     if(cuantia==4){return 62.5};
+    if(cuantia==5){
+        if (pliegos==0){pliegos=1};
+        return (6.25+(pliegos-1)*2.5);
+    };
+    if (cuantia==6){return 12.5};
 };
 function ValorAgrario (input,cuantia){
     let value = Math.ceil(input/1000)
