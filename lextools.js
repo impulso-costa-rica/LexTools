@@ -1,4 +1,4 @@
-console.log("Ajuste en Fiscal");
+console.log("Ajuste en Honorarios 8");
 var input1 = 0;
 var input2 = 0;
 var input3 = 0;
@@ -211,8 +211,11 @@ function ValorHonorarios (input1, input2, input3, cuantia, porcentaje) {
         result = calculo1(input1)+90750;
     };
     if (cuantia==8){
-        result = calculo1(input1)+calculo1(input2)*25/100;
-        if (result<60500){result = 60500};
+        let calculo3 = calculo1(input1);
+        let calculo4 = calculo1(input2)*25/100;
+        if (calculo3 < 60500){calculo3=60500};
+        if (calculo4 < 60500){calculo4=60500};
+        result = calculo3+calculo4;
     };
     if (cuantia==9){
         let value1 = calculo1(input1)*150/100;
