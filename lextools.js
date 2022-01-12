@@ -1,4 +1,4 @@
-console.log("Fixed Reintegro 3");
+console.log("+cuantia 3 Reintegro + Cuantia 10 Honorarios");
 var input1 = 0;
 var input2 = 0;
 var input3 = 0;
@@ -40,7 +40,7 @@ function ValorRNacional (input,cuantia){
 };
 function ValorANacional (input, cuantia){
     let value = 0;
-    if(input<100000){value = 10} else if(input>=100000){value = 20};
+    if(input<=100000){value = 10} else if(input>100000){value = 20};
     if(cuantia==0){return 0};
     if(cuantia==1){return value}
     if(cuantia==2){return 20}
@@ -86,6 +86,8 @@ function ValorRPapel (input,pliegos,cuantia){
     if(cuantia==1){return getRPapelValue(input)+valuePliegos};
     if(cuantia==2){return 125};
     if(cuantia==3){return 12.5};
+    //cuantia 1 pero sin pliegos
+    if(cuantia==4){return getRPapelValue(input)};
 };
 function ValorFiscal (input,pliegos,cuantia){
     let value = 0; 
@@ -223,6 +225,11 @@ function ValorHonorarios (input1, input2, input3, cuantia, porcentaje) {
         if (value1>value2){result = value1}
         else if (value1<value2){result = value2};
         if (result<60500){result = 60500};
+    };
+    // cuantia 1 pero con input 2
+    if (cuantia==10){
+        result = calculo1(input2)*porcentaje/100;
+        if (result<60500){result = 60500};  
     };
     return result;
 };  
