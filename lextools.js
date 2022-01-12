@@ -85,7 +85,7 @@ function ValorRPapel (input,pliegos,cuantia){
     if(cuantia==0){return 0};
     if(cuantia==1){return getRPapelValue(input)+valuePliegos};
     if(cuantia==2){return 125};
-    if(cuantia==3){return 12,5};
+    if(cuantia==3){return 12.5};
 };
 function ValorFiscal (input,pliegos,cuantia){
     let value = 0; 
