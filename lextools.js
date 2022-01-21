@@ -1,4 +1,4 @@
-console.log("+cuantia 3 Reintegro + Cuantia 10 Honorarios");
+console.log("Ajuste Cuantia 7 honorarios y Placa Moto");
 var input1 = 0;
 var input2 = 0;
 var input3 = 0;
@@ -165,6 +165,7 @@ function ValorFauna (input,cuantia){
 function ValorPlaca (input,cuantia){
     if (cuantia==0){return 0};
     if (cuantia==1){return 17600}
+    if (cuantia==2){return 10900}
 };
 function ValorTraspaso (input,cuantia){
     if (cuantia==0){return 0};
@@ -210,7 +211,7 @@ function ValorHonorarios (input1, input2, input3, cuantia, porcentaje) {
         result = 18150*porcentaje/100;
     };
     if (cuantia==7){
-        result = calculo1(input1)+90750;
+        result = calculo1(input1)+181500;
     };
     if (cuantia==8){
         let calculo3 = calculo1(input1);
