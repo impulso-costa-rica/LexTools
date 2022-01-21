@@ -172,7 +172,7 @@ function ValorTraspaso (input,cuantia){
     if (cuantia==1){return (input*2.5)/100};
     if (cuantia==2){return (input*1.5)/100};
 };
-function ValorHonorarios (input1, input2, input3, cuantia, porcentaje) {
+function ValorHonorarios (input1, input2, input3, cuantia, porcentaje, minimo) {
     function calculo1 (input){
         let total = 0;
         if(input <= 11000000){total = input*2/100};
@@ -192,11 +192,21 @@ function ValorHonorarios (input1, input2, input3, cuantia, porcentaje) {
     if (cuantia==0){result = 0};
     if (cuantia==1){
         result = calculo1(input1)*porcentaje/100;
-        if (result<60500){result = 60500};  
+        if (minimo=60500){
+            if (result<60500){result = minimo};  
+        }; 
+        if (minimo=121000){
+            if (result<121000){result = minimo};  
+        }; 
     };
     if (cuantia==2){
         result = calculo2(input1)*porcentaje/100;
-        if (result<60500){result = 60500};
+        if (minimo=60500){
+            if (result<60500){result = minimo};  
+        }; 
+        if (minimo=121000){
+            if (result<121000){result = minimo};  
+        }; 
     };
     if (cuantia==3){
         result = 60500*porcentaje/100;
@@ -225,12 +235,22 @@ function ValorHonorarios (input1, input2, input3, cuantia, porcentaje) {
         let value2 = (input2+input3)*60500;
         if (value1>value2){result = value1}
         else if (value1<value2){result = value2};
-        if (result<60500){result = 60500};
+        if (minimo=60500){
+            if (result<60500){result = minimo};  
+        }; 
+        if (minimo=121000){
+            if (result<121000){result = minimo};  
+        }; 
     };
     // cuantia 1 pero con input 2
     if (cuantia==10){
         result = calculo1(input2)*porcentaje/100;
-        if (result<60500){result = 60500};  
+        if (minimo=60500){
+            if (result<60500){result = minimo};  
+        }; 
+        if (minimo=121000){
+            if (result<121000){result = minimo};  
+        };  
     };
     return result;
 };  
