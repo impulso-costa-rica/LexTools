@@ -1,4 +1,4 @@
-console.log("Ajustes en minimo de honorarios");
+console.log("Correccion de honorarios errores");
 var input1 = 0;
 var input2 = 0;
 var input3 = 0;
@@ -192,19 +192,19 @@ function ValorHonorarios (input1, input2, input3, cuantia, porcentaje, minimo) {
     if (cuantia==0){result = 0};
     if (cuantia==1){
         result = calculo1(input1)*porcentaje/100;
-        if (minimo=60500){
+        if (minimo==60500){
             if (result<60500){result = minimo};  
         }; 
-        if (minimo=121000){
+        if (minimo==121000){
             if (result<121000){result = minimo};  
         }; 
     };
     if (cuantia==2){
         result = calculo2(input1)*porcentaje/100;
-        if (minimo=60500){
+        if (minimo==60500){
             if (result<60500){result = minimo};  
         }; 
-        if (minimo=121000){
+        if (minimo==121000){
             if (result<121000){result = minimo};  
         }; 
     };
@@ -235,20 +235,20 @@ function ValorHonorarios (input1, input2, input3, cuantia, porcentaje, minimo) {
         let value2 = (input2+input3)*60500;
         if (value1>value2){result = value1}
         else if (value1<value2){result = value2};
-        if (minimo=60500){
+        if (minimo==60500){
             if (result<60500){result = minimo};  
         }; 
-        if (minimo=121000){
+        if (minimo==121000){
             if (result<121000){result = minimo};  
         }; 
     };
     // cuantia 1 pero con input 2
     if (cuantia==10){
         result = calculo1(input2)*porcentaje/100;
-        if (minimo=60500){
+        if (minimo==60500){
             if (result<60500){result = minimo};  
         }; 
-        if (minimo=121000){
+        if (minimo==121000){
             if (result<121000){result = minimo};  
         };  
     };
