@@ -1,4 +1,4 @@
-console.log("Correccion de honorarios errores");
+console.log("Ajuste cuantía 5 Registro");
 var input1 = 0;
 var input2 = 0;
 var input3 = 0;
@@ -34,7 +34,7 @@ function ValorRNacional (input,cuantia){
     if (cuantia==2){return getRNvalue (input,5)};
     if(cuantia==3){return 2000};
     if(cuantia==4){return 46220};
-    if(cuantia==5){return(getRNvalue (input,2)+2000)};
+    if(cuantia==5){return(getRNvalue (input,2)+getRNvalue (input,5))};
     if(cuantia==6){return 300};
     if(cuantia==7){return(getRNvalue (input,5)+46220)};
 };
